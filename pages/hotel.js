@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import Header from '../components/NewTheme/Header';
 import Home from '../components/NewTheme/Home';
+import About from '../components/NewTheme/About'
 // import BookingForm from '@/components/NewTheme/Booking';
 
 
@@ -55,6 +56,10 @@ function Hotel() {
             <Home
                 allHotelDetails={allHotelDetails}
 
+            />
+
+            <About 
+                allHotelDetails={allHotelDetails}
             />
 
 
