@@ -1,25 +1,11 @@
-import { gsap } from 'gsap';
 import React, { useEffect } from 'react';
-import SplitType from 'split-type';
+import Animation from '../Animation';
 
 function Home({ allHotelDetails }) {
     useEffect(() => {
         if (allHotelDetails.length != 0) {
-            let welcomeTo = new SplitType("#welcome-to");
-            let hotelName = new SplitType("#hotel-name");
-            let characters = document.querySelectorAll('.char');
-            for (let i = 0; i < characters.length; i++) {
-                // characters[i].classList.add('translate-x-full');
-                characters[i].classList.add('translate-y-full');              
-            }
-            gsap.to('.char', {
-                 y: 0,
-                // x:0,
-                stagger: 0.05,
-                delay: 0.02,
-                duration: 0.5
-
-            });
+            Animation("#welcome-to","y")
+            Animation("#hotel-name","y")
         }
     }, [allHotelDetails])
 
