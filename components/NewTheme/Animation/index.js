@@ -2,7 +2,7 @@ import SplitType from 'split-type';
 import { gsap } from 'gsap';
 
 function Animation(id,direction) {
-    let dirData={'y':'translate-y-full','x':'translate-x-full'}
+    let dirData={'y':'translate-y-full','x':'translate-x-full','-x':'-translate-x-full','-y':'-translate-y-full'}
     let text = new SplitType(`${id}`);
     let characters = document.querySelectorAll('.char');
     for (let i = 0; i < characters.length; i++) {

@@ -1,31 +1,52 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Animation from '../Animation';
+
 
 function index({ allHotelDetails }) {
+
+  useEffect(() => {
+    if (allHotelDetails.length != 0) {
+      Animation("#about-title", "y")
+      Animation("#description-title", "y")
+
+    }
+  }, [allHotelDetails])
+
   return (
     <section>
-      {/* <div className='py-36 bg-[url("https://a6e8z9v6.stackpathcdn.com/hotelmaster/dark/wp-content/uploads/2015/03/about-bg.jpg")]' > */}
-      <div className='pt-36 pb-28 bg-gradient-to-b from-black to-gray-800 '>
-        <div className='mx-8 text-white text-center md:flex'>
+      <div className='pt-32 pb-28 md:pb-20 bg-gradient-to-b from-black to-gray-800 '>
+        <div className='mx-8 text-white text-center md:flex md:gap-20'>
           <div className='mx-4'>
-            <div><h3 className='heading text-4xl font-bold tracking-widest'>A LITTLE ABOUT US</h3></div>
-            <div className='my-10 md:hidden lg:hidden'><div className=' px-6 bg-white inline-block' style={{ height: '2px' }}></div></div>
+            <div className='headingBlock md:w-52 '>
+              <h3 id='about-title' className=' text-4xl lg:text-5xl font-bold tracking-widest' style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>{allHotelDetails.length != 0 ? `A LITTLE ABOUT US` : ``}</h3>
+            </div>
+            <div className='my-5'>
+              <div className=' px-6 bg-white inline-block' style={{ height: '2px' }}></div>
+            </div>
+            <div className=''>
+              <h3 id='description-title' className='text-xl font-bold tracking-widest mb-10' style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>{allHotelDetails?.description_title}</h3>
+            </div>
           </div>
+
           <div>
-            <div className='text-sm mx-6'>{allHotelDetails?.description_body}</div>
+            <div id='description-body' className='text-sm mx-6 md:mx-4  md:pt-4 lg:pt-4' style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>{allHotelDetails?.description_body}</div>
           </div>
 
         </div>
       </div>
 
       <style jsx>
-        {`
-            
+        {`         
                 @media (min-width: 1024px) {
-                    .heading {
-                        height:70vh;
+                    .headingBlock {
+                        width:400px;
                     }
                 }
-                 
+                @media (min-width: 1280px) {
+                    .headingBlock {
+                        width:500px;
+                    }
+                }              
                 `}
       </style>
     </section>
