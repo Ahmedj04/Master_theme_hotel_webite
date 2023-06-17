@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from '../components/NewTheme/Header';
 import Home from '../components/NewTheme/Home';
 import About from '../components/NewTheme/About'
+import Rooms from '@/components/Rooms';
 // import BookingForm from '@/components/NewTheme/Booking';
 
 
@@ -59,7 +60,12 @@ function Hotel() {
             />
 
             <About 
+                allHotelDetails={allHotelDetails}     
+            />
+
+            <Rooms 
                 allHotelDetails={allHotelDetails}
+                rooms={rooms}
             />
 
 
