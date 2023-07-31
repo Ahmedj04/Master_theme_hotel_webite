@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Animation from '../Animation';
 
 function Home({ allHotelDetails }) {
+
     useEffect(() => {
         if (allHotelDetails.length != 0) {
             Animation("#welcome-to", "y")

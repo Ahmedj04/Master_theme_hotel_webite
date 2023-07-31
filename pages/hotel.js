@@ -3,12 +3,15 @@ import axios from 'axios';
 import Header from '../components/NewTheme/Header';
 import Home from '../components/NewTheme/Home';
 import About from '../components/NewTheme/About'
-import Rooms from '@/components/Rooms';
+import Rooms from '@/components/NewTheme/Rooms';
+import CarousalComponent from '@/components/NewTheme/CarousalComponent';
 // import BookingForm from '@/components/NewTheme/Booking';
 
 
 function Hotel() {
     const [allHotelDetails, setHotelDetails] = useState([]);
+    const [hotelDetailLoader, setHotelDetailLoader] = useState(0);
+    const [roomDetailLoader, setRoomDetailLoader] = useState(0);
     const [rooms, setRooms] = useState([]);
     const [menu, setMenu] = useState(false);
 
@@ -59,13 +62,23 @@ function Hotel() {
 
             />
 
-            <About 
-                allHotelDetails={allHotelDetails}     
+            <About
+                allHotelDetails={allHotelDetails}
             />
 
-            <Rooms 
+            <Rooms
                 allHotelDetails={allHotelDetails}
                 rooms={rooms}
+                roomDetailLoader={roomDetailLoader}
+            />
+
+
+            <CarousalComponent
+                id="reviews"
+                type='review'
+                data={allHotelDetails?.Reviews}
+                title='TESTIMONIALS'
+                // hotelDetailLoader={hotelDetailLoader}
             />
 
 
