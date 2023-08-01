@@ -20,7 +20,7 @@ function Rooms({ rooms, allHotelDetails, roomDetailLoader }) {
     ), [selectedRoom]) //it will be called when ever there is any change in the state selectedRoom
 
     return (
-        <section>
+        <section id='rooms'>
             <div className="bg-[url('/room-bg.jpg')] pt-20 pb-2">
                 <div className='mx-2 md:mx-12'>
                     <div className='mx-4 mb-10 text-center'>
@@ -124,7 +124,7 @@ function Rooms({ rooms, allHotelDetails, roomDetailLoader }) {
                         }
 
                         {/* hotel gallery */}
-                        <div className='py-10'>
+                        <div id='photos' className='py-10'>
                             <div className='mx-4 mb-10 md:mb-16 text-center'>
                                 <h3 className='text-2xl md:text-3xl lg:text-3xl font-normal tracking-widest'>GALLERY</h3>
                             </div>

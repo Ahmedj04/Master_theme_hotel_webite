@@ -13,7 +13,7 @@ function index({ allHotelDetails }) {
   }, [allHotelDetails])
 
   return (
-    <section>
+    <section id='about'>
       <div className='pt-32 pb-28 md:pb-20 bg-gradient-to-b from-black to-gray-800 '>
         <div className='mx-8 text-white text-center md:flex md:gap-20'>
           <div className='mx-4'>

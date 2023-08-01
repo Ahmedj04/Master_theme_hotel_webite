@@ -4,6 +4,7 @@ import Header from '../components/NewTheme/Header';
 import Home from '../components/NewTheme/Home';
 import About from '../components/NewTheme/About'
 import Rooms from '@/components/NewTheme/Rooms';
+import Footer from '@/components/NewTheme/Footer';
 import CarousalComponent from '@/components/NewTheme/CarousalComponent';
 // import BookingForm from '@/components/NewTheme/Booking';
 
@@ -78,7 +79,12 @@ function Hotel() {
                 type='review'
                 data={allHotelDetails?.Reviews}
                 title='TESTIMONIALS'
-                // hotelDetailLoader={hotelDetailLoader}
+            // hotelDetailLoader={hotelDetailLoader}
+            />
+
+            <Footer
+                allHotelDetails={allHotelDetails}
+                hotelDetailLoader={hotelDetailLoader}
             />
 
 

@@ -57,7 +57,7 @@ function Photos({ allHotelDetails }) {
     }
 
     return (
-        <>
+        <div>
             <PhotoAlbum layout="rows" spacing={5} photos={displayPhotos} onClick={({ index }) => activateImagesSlider(index, displayPhotos)} />
             <p className='text-center uppercase mt-5'>
                 <a onClick={() => { 
@@ -87,7 +87,7 @@ function Photos({ allHotelDetails }) {
                     setShowModal={(e) => setImageSlideShow(e)} />
 
             </div>
-        </>
+        </div>
     )
 }
 
