@@ -6,7 +6,8 @@ import About from '../components/NewTheme/About'
 import Rooms from '@/components/NewTheme/Rooms';
 import Footer from '@/components/NewTheme/Footer';
 import CarousalComponent from '@/components/NewTheme/CarousalComponent';
-// import BookingForm from '@/components/NewTheme/Booking';
+import Services from '@/components/NewTheme/Services';
+import MenuSM from '@/components/NewTheme/MenuSM';
 
 
 function Hotel() {
@@ -71,8 +72,8 @@ function Hotel() {
                 allHotelDetails={allHotelDetails}
                 rooms={rooms}
                 roomDetailLoader={roomDetailLoader}
+                hotelDetailLoader={hotelDetailLoader}
             />
-
 
             <CarousalComponent
                 id="reviews"
@@ -91,30 +92,7 @@ function Hotel() {
 
             {/*-------------------- menu bar for small and medium screen----------- */}
 
-            {menu === true ?
-                <React.Fragment>
-                    <div className='absolute inset-0 w-9/12 mx-auto h-60 mt-28 md:h-80 bg-gray-800 opacity-100 rounded-b-3xl'>
-                        {/* <i onClick={() => setMenu(false)} className='flex justify-end pt-5 pr-5 cursor-pointer hover:text-slate-500'><CloseIcon /></i> */}
-                        <div className='text-center text-white pt-10 md:pt-12'>
-                            <ul className='inline-block font-semibold'>
-                                {[{ "label": "About", "id": "#about" },
-                                { "label": "Rooms", "id": "#rooms" },
-                                { "label": "Photos", "id": "#photos" },
-                                { "label": "Services", "id": "#services" },
-                                { "label": "Reviews", "id": "#reviews" },
-                                { "label": "Contact Us", "id": "#footer" }
-                                ].map((item, index) => {
-                                    return (
-                                        <a href={`${item?.id}`} key={index} onClick={() => setMenu(false)}><li className='pb-1 md:pb-2 hover:text-slate-500'>{item?.label}</li></a>
-                                    )
-                                })}
-
-                            </ul>
-                        </div>
-                    </div>
-                </React.Fragment>
-                : <></>
-            }
+            {menu === true ? <MenuSM /> : <></> }
 
 
         </main>

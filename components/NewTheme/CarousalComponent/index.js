@@ -5,11 +5,11 @@ import Loader from '../Loaders/Loader';
 
 function CarousalComponent({ type = 'review', data = [], title, id, hotelDetailLoader }) {
     return (
-        <section id={id} className={`px-5 py-10 ${type === 'room' ? '' : 'bg-gradient-to-b from-black to-gray-800'}`}>
+        <section id={id} className={`px-5 py-10 ${type === 'room' ? '' : 'bg-gradient-to-b from-black to-gray-800 '}`}>
                 <div className='pt-10'>
                     {title ?
                         <div className='mx-4 mb-10 text-center'>
-                            <h3 className='text-white text-2xl md:text-3xl lg:text-3xl font-normal tracking-widest'>{title}</h3>
+                            <h3 className='text-white text-2xl md:text-3xl lg:text-3xl font-normal tracking-widest border-b-2 border-white inline-block'>{title}</h3>
                         </div>
 
 

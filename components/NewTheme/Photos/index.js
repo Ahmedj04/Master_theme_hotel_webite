@@ -60,7 +60,7 @@ function Photos({ allHotelDetails }) {
         <div>
             <PhotoAlbum layout="rows" spacing={5} photos={displayPhotos} onClick={({ index }) => activateImagesSlider(index, displayPhotos)} />
             <p className='text-center uppercase mt-5'>
-                <a onClick={() => { 
+                <a className='cursor-pointer hover:text-blue-500' onClick={() => { 
                     // on the bases of showText.tap value we will set the photos to be displayed.
                     showText.tap === true ? setDisplayPhotos(photos.slice(0,7)) : setDisplayPhotos(photos);
                     

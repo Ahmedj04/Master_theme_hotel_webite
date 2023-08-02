@@ -8,7 +8,7 @@ function Footer({ allHotelDetails, hotelDetailLoader }) {
 
     const [showModalTC, setShowModalTC] = useState(0);
     const [showModalPrivacy, setShowModalPrivacy] = useState(0);
-    const [showModalContactUs, setShowModalContactUs] = useState(0);
+    // const [showModalContactUs, setShowModalContactUs] = useState(0);
 
 
     return (
@@ -20,17 +20,17 @@ function Footer({ allHotelDetails, hotelDetailLoader }) {
                             {/* <a href='#rooms'><li className='py-2 hover:text-white'>{lang?.theRoomsSuites}</li></a> */}
                             {/* <a href='#about'><li className='py-2 hover:text-white'>{lang?.aboutUs}</li></a> */}
 
-                            <a href='#rooms'><li className='py-2 hover:text-white'>Rooms</li></a>
-                            <a href='#photos'><li className='py-2 hover:text-white'>Photos</li></a>
-                            <a href='#about'><li className='py-2 hover:text-white'>About Us</li></a>
+                            <a href='#rooms'><li className='py-2 text-sm hover:text-white'>Rooms</li></a>
+                            <a href='#photos'><li className='py-2 text-sm hover:text-white'>Photos</li></a>
+                            <a href='#about'><li className='py-2 text-sm hover:text-white'>About Us</li></a>
 
                         </ul>
                     </div>
 
                     <div className="pb-10">
                         <ul className='text-gray-400'>
-                            <li className='py-2 hover:text-white cursor-pointer' onClick={() => setShowModalTC(1)}>Terms & Conditions</li>
-                            <li className='py-2 hover:text-white cursor-pointer' onClick={() => setShowModalPrivacy(1)}>Privacy Policy</li>
+                            <li className='py-2 text-sm hover:text-white cursor-pointer' onClick={() => setShowModalTC(1)}>Terms & Conditions</li>
+                            <li className='py-2 text-sm hover:text-white cursor-pointer' onClick={() => setShowModalPrivacy(1)}>Privacy Policy</li>
                         </ul>
                     </div>
 
@@ -39,13 +39,13 @@ function Footer({ allHotelDetails, hotelDetailLoader }) {
                     <div className="pb-10">
                         <div>
                             <div className="text-gray-400 pb-5">
-                                <h1 className='text-white'><em>Address</em></h1>
+                                <h1 className='text-white text-sm'><em>Address</em></h1>
                                 {hotelDetailLoader === 0 ?
                                     <><Loader size={`w-5/12 h-8 md:w-36`} /> <br /> <Loader size={`w-5/12 h-8 md:w-36`} /></> :
-                                    <><span className="">{allHotelDetails?.address?.[0]?.address_street_address},</span><br /></>
+                                    <><span className="text-sm">{allHotelDetails?.address?.[0]?.address_street_address},</span><br /></>
 
                                 }
-                                <span className=''>{allHotelDetails?.address?.[0]?.address_city},{allHotelDetails?.address?.[0]?.address_zipcode}</span><br />
+                                <span className='text-sm'>{allHotelDetails?.address?.[0]?.address_city},{allHotelDetails?.address?.[0]?.address_zipcode}</span><br />
                             </div>
                         </div>
                     </div>
@@ -54,16 +54,17 @@ function Footer({ allHotelDetails, hotelDetailLoader }) {
                         {allHotelDetails?.contacts?.map((contact, index) => {
                             return (
                                 <div key={index} className='text-gray-400 pb-5'>
-                                    <h1 className='text-white'><em>{contact?.contact_type} </em></h1>
-                                    <p>{contact?.contact_data}</p>
+                                    <h1 className='text-white text-sm'><em>{contact?.contact_type} </em></h1>
+                                    <p className='text-sm'>{contact?.contact_data}</p>
                                 </div>);
                         })}
                     </div>
                 </div>
 
-                <div className='text-center text-gray-400 md:text-center lg:text-center'>
-                    <p>Copyright &copy; {date.getFullYear()} All Rights Reserved</p>
-                    <p></p>
+                
+
+                <div className='text-center text-gray-400 md:text-center lg:text-center pt-10 border-t-2'>
+                    <p className='text-xs'>Copyright &copy; {date.getFullYear()} All Rights Reserved</p>
                 </div>
 
             </div>

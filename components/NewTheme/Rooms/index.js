@@ -5,9 +5,10 @@ import RoomServices from './RoomServices';
 import CarousalComponent from '../CarousalComponent';
 import Photos from '../Photos';
 import Loader from '../Loaders/Loader';
+import Services from '../Services';
 
 
-function Rooms({ rooms, allHotelDetails, roomDetailLoader }) {
+function Rooms({ rooms, allHotelDetails, hotelDetailLoader, roomDetailLoader }) {
     const [selectedRoom, setSelectedRoom] = useState([]);
     const [showRoom, setShowRoom] = useState({
         'visible': 0,
@@ -21,15 +22,15 @@ function Rooms({ rooms, allHotelDetails, roomDetailLoader }) {
 
     return (
         <section id='rooms'>
-            <div className="bg-[url('/room-bg.jpg')] pt-20 pb-2">
+            <div className="bg-[url('/room-bg.jpg')] bg-contain pt-20 pb-2">
                 <div className='mx-2 md:mx-12'>
                     <div className='mx-4 mb-10 text-center'>
-                        <h3 className='text-2xl md:text-3xl lg:text-3xl  font-normal tracking-widest'>HOTEL ROOMS</h3>
+                        <h3 className='text-2xl md:text-3xl lg:text-3xl  font-normal tracking-widest border-b-2 border-black inline-block uppercase'>{allHotelDetails?.property_category} rooms</h3>
                     </div>
 
                     <div>
 
-                        {roomDetailLoader === 0 ? <><Loader size={`relative left-4 w-11/12 h-40 md:w-3/12 md:h-40 md:mr-10`} /> <Loader size={`md:w-3/12 md:h-40 md:mr-10`} /> <Loader size={`md:w-3/12 md:h-40`} /> </>: <>
+                        {roomDetailLoader === 0 ? <><Loader size={`relative left-4 w-11/12 h-40 md:w-3/12 md:h-40 md:mr-10`} /> <Loader size={`md:w-3/12 md:h-40 md:mr-10`} /> <Loader size={`md:w-3/12 md:h-40`} /> </> : <>
                             <Carousel cols={4} rows={1} gap={10} loop={false}
                                 responsiveLayout={[
                                     {
@@ -126,16 +127,19 @@ function Rooms({ rooms, allHotelDetails, roomDetailLoader }) {
                         {/* hotel gallery */}
                         <div id='photos' className='py-10'>
                             <div className='mx-4 mb-10 md:mb-16 text-center'>
-                                <h3 className='text-2xl md:text-3xl lg:text-3xl font-normal tracking-widest'>GALLERY</h3>
+                                <h3 className='text-2xl md:text-3xl lg:text-3xl font-normal tracking-widest border-b-2 border-black inline-block'>GALLERY</h3>
                             </div>
                             <Photos allHotelDetails={allHotelDetails} />
                         </div>
 
+                        {/* hotel Services */}
+                        <Services
+                            allHotelDetails={allHotelDetails}
+                            hotelDetailLoader={hotelDetailLoader}
+                        />
+
                     </div>
-
                 </div>
-
-
             </div>
         </section>
     )
