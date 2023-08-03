@@ -29,7 +29,7 @@ function Header({ allHotelDetails, menu, setMenu, themeColor, setThemeColor }) {
                             starSpacing='1px'
                             name='rating'
                         />
-                        <h1 className={`${themeColor.textColor} text-xl pt-2 md:text-4xl md:font-light tracking-widest`}>{(allHotelDetails?.property_name)?.toUpperCase()}</h1>
+                        <h1 className={`${themeColor.textColor} text-xl pt-2 md:text-4xl md:font-light tracking-widest uppercase`}>{(allHotelDetails?.property_name)}</h1>
                     </div>
 
                     {/* for small screens  */}

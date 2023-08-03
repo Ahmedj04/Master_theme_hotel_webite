@@ -20,9 +20,9 @@ function Hotel() {
 
 
     useEffect(() => {
+        getThemeColor();
         getHotelDetails();
         getRoomDetails();
-        getThemeColor();
     }, []);
 
     function getHotelDetails() {
