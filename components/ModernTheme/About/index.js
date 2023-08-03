@@ -15,6 +15,7 @@ function index({ allHotelDetails, themeColor }) {
   return (
     <section id='about'>
       <div className={`pt-32 pb-28 md:pb-20 ${themeColor.colorTransition}`}>
+      
         <div className={`mx-8 ${themeColor.textColor} text-center md:flex md:gap-20`}>
           <div className='mx-4'>
             <div className='headingBlock md:w-52 '>
