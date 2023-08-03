@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import Header from '../components/NewTheme/Header';
-import Home from '../components/NewTheme/Home';
-import About from '../components/NewTheme/About'
-import Rooms from '@/components/NewTheme/Rooms';
-import Footer from '@/components/NewTheme/Footer';
-import CarousalComponent from '@/components/NewTheme/CarousalComponent';
-import Services from '@/components/NewTheme/Services';
-import MenuSM from '@/components/NewTheme/MenuSM';
+import Header from '../components/ModernTheme/Header';
+import Home from '../components/ModernTheme/Home';
+import About from '../components/ModernTheme/About'
+import Rooms from '@/components/ModernTheme/Rooms';
+import Footer from '@/components/ModernTheme/Footer';
+import CarousalComponent from '@/components/ModernTheme/CarousalComponent';
+import MenuSM from '@/components/ModernTheme/MenuSM';
+import color from '../components/ModernTheme/Data/Colors.json';
 
 
 function Hotel() {
@@ -16,11 +16,13 @@ function Hotel() {
     const [roomDetailLoader, setRoomDetailLoader] = useState(0);
     const [rooms, setRooms] = useState([]);
     const [menu, setMenu] = useState(false);
+    const [themeColor, setThemeColor] = useState(color.black);
 
 
     useEffect(() => {
         getHotelDetails();
         getRoomDetails();
+        getThemeColor();
     }, []);
 
     function getHotelDetails() {
@@ -50,6 +52,25 @@ function Hotel() {
             })
     }
 
+    function getThemeColor(){
+        let bgColor = localStorage.getItem("color");
+        if(bgColor === null){
+            setThemeColor(color.black)
+        }else if(bgColor === 'black'){
+            setThemeColor(color.black)
+        }else if(bgColor === 'red'){
+            setThemeColor(color.red)
+        } else if(bgColor === 'green'){
+            setThemeColor(color.green)
+        }else if(bgColor === 'green'){
+            setThemeColor(color.green)
+        }
+        else{
+            setThemeColor(color.white)
+        }
+    }
+
+
 
     return (
         <main>
@@ -57,6 +78,9 @@ function Hotel() {
                 allHotelDetails={allHotelDetails}
                 menu={menu}
                 setMenu={setMenu}
+                themeColor={themeColor}
+                setThemeColor={setThemeColor}
+
             />
 
             <Home
@@ -66,6 +90,7 @@ function Hotel() {
 
             <About
                 allHotelDetails={allHotelDetails}
+                themeColor={themeColor}
             />
 
             <Rooms
@@ -80,6 +105,7 @@ function Hotel() {
                 type='review'
                 data={allHotelDetails?.Reviews}
                 title='TESTIMONIALS'
+                themeColor={themeColor}
             // hotelDetailLoader={hotelDetailLoader}
             />
 

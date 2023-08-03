@@ -35,8 +35,6 @@ function Home({ allHotelDetails }) {
                 @media (min-width: 768px) {
                     .dash {
                         height:3px;
-                        
-
                     }
                 }
                  

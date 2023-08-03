@@ -3,13 +3,13 @@ import Carousel from 'better-react-carousel';
 import Loader from '../Loaders/Loader';
 
 
-function CarousalComponent({ type = 'review', data = [], title, id, hotelDetailLoader }) {
+function CarousalComponent({ type = 'review', data = [], title, id, hotelDetailLoader, themeColor }) {
     return (
-        <section id={id} className={`px-5 py-10 ${type === 'room' ? '' : 'bg-gradient-to-b from-black to-gray-800 '}`}>
+        <section id={id} className={`px-5 py-10 ${type === 'room' ? '' :  themeColor.colorTransition}`}>
                 <div className='pt-10'>
                     {title ?
                         <div className='mx-4 mb-10 text-center'>
-                            <h3 className='text-white text-2xl md:text-3xl lg:text-3xl font-normal tracking-widest border-b-2 border-white inline-block'>{title}</h3>
+                            <h3 className={`${themeColor.textColor} text-2xl md:text-3xl lg:text-3xl font-normal tracking-widest border-b-2 border-white inline-block`}>{title}</h3>
                         </div>
 
 
@@ -67,9 +67,9 @@ function CarousalComponent({ type = 'review', data = [], title, id, hotelDetailL
                                         {
                                             type === 'review' ?
                                                 <>
-                                                    <p className="text-center text-slate-500 tracking-wide text-white">{resource?.review_content}</p>
+                                                    <p className={`text-center ${themeColor.textColor} tracking-wide`}>{resource?.review_content}</p>
 
-                                                    <p className='text-center text-slate-500 tracking-wide py-10 text-white'>{resource?.review_author}</p>
+                                                    <p className={`text-center ${themeColor.textColor} tracking-wide py-10`}>{resource?.review_author}</p>
                                                 </> :
                                                 <img width="100%" style={{ height: "350px" }} className="rounded-lg" src={resource?.image_link} />
                                         }

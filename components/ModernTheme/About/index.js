@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Animation from '../Animation';
 
 
-function index({ allHotelDetails }) {
+function index({ allHotelDetails, themeColor }) {
 
   useEffect(() => {
     if (allHotelDetails.length != 0) {
@@ -14,8 +14,8 @@ function index({ allHotelDetails }) {
 
   return (
     <section id='about'>
-      <div className='pt-32 pb-28 md:pb-20 bg-gradient-to-b from-black to-gray-800 '>
-        <div className='mx-8 text-white text-center md:flex md:gap-20'>
+      <div className={`pt-32 pb-28 md:pb-20 ${themeColor.colorTransition}`}>
+        <div className={`mx-8 ${themeColor.textColor} text-center md:flex md:gap-20`}>
           <div className='mx-4'>
             <div className='headingBlock md:w-52 '>
               <h3 id='about-title' className=' text-4xl lg:text-5xl font-bold tracking-widest' style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>{allHotelDetails.length != 0 ? `A LITTLE ABOUT US` : ``}</h3>

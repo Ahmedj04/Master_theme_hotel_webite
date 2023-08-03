@@ -1,0 +1,29 @@
+{
+    "black": {
+        "textColor":"text-white",
+        "bgColor": "bg-black",
+        "colorTransition": "bg-gradient-to-b from-black to-gray-800",
+        "menuColor": "white"
+    },
+    "red": {
+        "textColor":"text-white",
+        "bgColor": "bg-red-950",
+        "colorTransition": "bg-gradient-to-b from-red-950 to-gray-800",
+        "menuColor": "white"
+
+    },
+    "green": {
+        "textColor":"text-white",
+        "bgColor": "bg-green-950",
+        "colorTransition": " bg-gradient-to-b from-green-950 to-gray-950",
+        "menuColor": "white"
+
+    },
+    "white": {
+        "textColor":"text-black",
+        "bgColor": "text-slate-50",
+        "colorTransition": "bg-slate-50",
+        "menuColor": "gray"
+
+    }
+}
