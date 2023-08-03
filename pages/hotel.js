@@ -62,8 +62,6 @@ function Hotel() {
             setThemeColor(color.red)
         } else if(bgColor === 'green'){
             setThemeColor(color.green)
-        }else if(bgColor === 'green'){
-            setThemeColor(color.green)
         }
         else{
             setThemeColor(color.white)
