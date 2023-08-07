@@ -18,12 +18,30 @@ function Hotel() {
     const [menu, setMenu] = useState(false);
     const [themeColor, setThemeColor] = useState(color.black);
 
-
     useEffect(() => {
         getThemeColor();
         getHotelDetails();
         getRoomDetails();
     }, []);
+
+    function getThemeColor(){
+        let bgColor = localStorage.getItem("color");
+        if(bgColor === null){
+            setThemeColor(color.black)
+        }
+        else if(bgColor === 'black'){
+            setThemeColor(color.black)
+        }
+        else if(bgColor === 'red'){
+            setThemeColor(color.red)
+        }
+         else if(bgColor === 'green'){
+            setThemeColor(color.green)
+        }
+        else{
+            setThemeColor(color.white)
+        }
+    }
 
     function getHotelDetails() {
         let url = "/api/jammu-and-kashmir/srinagar/hotels/t2k0032";
@@ -52,21 +70,7 @@ function Hotel() {
             })
     }
 
-    function getThemeColor(){
-        let bgColor = localStorage.getItem("color");
-        if(bgColor === null){
-            setThemeColor(color.black)
-        }else if(bgColor === 'black'){
-            setThemeColor(color.black)
-        }else if(bgColor === 'red'){
-            setThemeColor(color.red)
-        } else if(bgColor === 'green'){
-            setThemeColor(color.green)
-        }
-        else{
-            setThemeColor(color.white)
-        }
-    }
+   
 
 
 

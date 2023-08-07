@@ -13,9 +13,6 @@ function Header({ allHotelDetails, menu, setMenu, themeColor, setThemeColor }) {
     function clickHandler(id, action) {
         action === 'modal' ? id() : Router.push(`${window?.location?.origin}/${id}`)
     }
-    
-    // console.log(themeColor.bgColor)
-
     return (
         <header className={`h-auto ${themeColor.bgColor}`}>
             <div className='mx-8'>
@@ -29,8 +26,10 @@ function Header({ allHotelDetails, menu, setMenu, themeColor, setThemeColor }) {
                             starSpacing='1px'
                             name='rating'
                         />
+
                         <h1 className={`${themeColor.textColor} text-xl pt-2 md:text-4xl md:font-light tracking-widest uppercase`}>{(allHotelDetails?.property_name)}</h1>
                     </div>
+
 
                     {/* for small screens  */}
                     <div className='my-auto md:hidden lg:hidden'>
