@@ -38,9 +38,10 @@ function Hotel() {
          else if(bgColor === 'green'){
             setThemeColor(color.green)
         }
-        else{
+        else {
             setThemeColor(color.white)
         }
+
     }
 
     function getHotelDetails() {
@@ -69,10 +70,6 @@ function Hotel() {
                 console.log(JSON.stringify(err))
             })
     }
-
-   
-
-
 
     return (
         <main>

@@ -48,7 +48,7 @@ function index({ allHotelDetails, themeColor }) {
                         width:500px;
                     }
                 }              
-                `}
+       `}
       </style>
     </section>
   )

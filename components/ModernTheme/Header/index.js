@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import StarRatings from 'react-star-ratings';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -9,12 +9,20 @@ import color from '../Data/Colors.json'
 function Header({ allHotelDetails, menu, setMenu, themeColor, setThemeColor }) {
 
     const [showModalContactUs, setShowModalContactUs] = useState(0);
+    const [headerColor, setHeaderColor] = useState(themeColor);
+
+    useEffect(() => {
+        setHeaderColor(themeColor)
+    }, [themeColor]);
+
 
     function clickHandler(id, action) {
         action === 'modal' ? id() : Router.push(`${window?.location?.origin}/${id}`)
     }
+
     return (
-        <header className={`h-auto ${themeColor.bgColor}`}>
+        <header className={`h-auto ${themeColor.bgColor}`}>r
+
             <div className='mx-8'>
                 <div className='py-8 pr-1 flex justify-between md:py-10 lg:py-16'>
                     <div className='mx-4 text-center md:mx-auto'>
@@ -33,7 +41,7 @@ function Header({ allHotelDetails, menu, setMenu, themeColor, setThemeColor }) {
 
                     {/* for small screens  */}
                     <div className='my-auto md:hidden lg:hidden'>
-                        <i className='text-white cursor-pointer ' onClick={() => setMenu(!menu)}>{menu === true ? <CloseIcon sx={{ fontSize: 30 , color: themeColor.menuColor}} /> : <MenuIcon sx={{ fontSize: 30 ,color:themeColor.menuColor}} />}</i>
+                        <i className='text-white cursor-pointer ' onClick={() => setMenu(!menu)}>{menu === true ? <CloseIcon sx={{ fontSize: 30, color: themeColor.menuColor }} /> : <MenuIcon sx={{ fontSize: 30, color: themeColor.menuColor }} />}</i>
                     </div>
 
                     <div className=" relative w-20 lg:max-w-sm flex">

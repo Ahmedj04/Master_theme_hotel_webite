@@ -21,7 +21,7 @@
     },
     "white": {
         "textColor":"text-black",
-        "bgColor": "text-slate-50",
+        "bgColor": "bg-slate-50",
         "colorTransition": "bg-slate-50",
         "menuColor": "gray"
 

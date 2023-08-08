@@ -45,7 +45,7 @@ function ContactUsModal({ setShowModalContactUs }) {
 
                     <form action="#" className="space-y-1 mx-10 my-2 lg:space-y-0">
                         <div>
-                            <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Your email</label>
+                            <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Your email</label>
                             <input
                                 onChange={(e) => {
                                     setContact({
@@ -59,7 +59,7 @@ function ContactUsModal({ setShowModalContactUs }) {
                         </div>
 
                         <div className='pt-2'>
-                            <label for="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Your Name</label>
+                            <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Your Name</label>
                             <input
                                 onChange={(e) => {
                                     setContact({
@@ -72,7 +72,7 @@ function ContactUsModal({ setShowModalContactUs }) {
                         </div>
 
                         <div className='pt-2'>
-                            <label for="number" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Your Phone Number</label>
+                            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Your Phone Number</label>
                             <input
                                 onChange={(e) => {
                                     setContact({
@@ -85,7 +85,7 @@ function ContactUsModal({ setShowModalContactUs }) {
                         </div>
 
                         <div className='pt-2'>
-                            <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Subject</label>
+                            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Subject</label>
                             <input
                                 onChange={(e) => {
                                     setContact({
@@ -98,7 +98,7 @@ function ContactUsModal({ setShowModalContactUs }) {
                         </div>
 
                         <div className="sm:col-span-2 pt-2">
-                            <label for="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Your message</label>
+                            <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Your message</label>
                             <textarea
                                 onChange={(e) => {
                                     setContact({
